@@ -1,0 +1,37 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option enforcedvalues='true' name='Action' required='true' value='status' values='restart,start,status,stop'>
+          <description>Job on 2nd Node</description>
+        </option>
+      </options>
+    </context>
+    <defaultTab>output</defaultTab>
+    <description>Actions on apache web services</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>VARIABLES/ACTION</group>
+    <id>957065f7-3c88-44c9-bad6-a7b52d16b0f1</id>
+    <loglevel>INFO</loglevel>
+    <name>APACHE</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>name: ubuntu02</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>service apache2 ${option.Action}</exec>
+      </command>
+    </sequence>
+    <uuid>957065f7-3c88-44c9-bad6-a7b52d16b0f1</uuid>
+  </job>
+</joblist>
